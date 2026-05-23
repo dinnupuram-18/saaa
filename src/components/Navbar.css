@@ -1,0 +1,198 @@
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 100;
+  transition: all 0.5s ease;
+  padding: 1.5rem 0;
+  opacity: 0;
+  transform: translateY(-20px);
+  animation: fadeInDown 1s 0.5s forwards;
+}
+
+.navbar.scrolled {
+  padding: 1rem 0;
+  background: var(--glass-bg);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5);
+  border-bottom: 1px solid var(--glass-border);
+}
+
+.nav-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 2rem;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem; /* Space between logo image and text */
+  cursor: pointer;
+  text-decoration: none;
+  transition: transform 0.3s ease;
+}
+
+.logo:hover {
+  transform: scale(1.02);
+}
+
+.logo-image {
+  height: 45px; /* Small icon size beside text */
+  width: 45px;
+  object-fit: contain;
+  border-radius: 50%;
+  box-shadow: 0 0 15px rgba(212, 175, 55, 0.6), 0 0 30px rgba(212, 175, 55, 0.2);
+  background-color: var(--color-bg-dark);
+  border: 1px solid rgba(212, 175, 55, 0.3);
+}
+
+.logo-text {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 1.1rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--color-text-bright);
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.5);
+}
+
+.navbar.scrolled .logo-text {
+  color: var(--color-text);
+  text-shadow: none;
+}
+
+.nav-links {
+  display: flex;
+  gap: 2.5rem;
+  list-style: none;
+}
+
+.nav-links a {
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  color: var(--color-text-bright);
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.5);
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+.navbar.scrolled .nav-links a {
+  color: var(--color-text);
+  text-shadow: none;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+  color: var(--color-gold);
+}
+
+.nav-links a.active::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 20px;
+  height: 2px;
+  background: var(--color-gold);
+  border-radius: 2px;
+  box-shadow: 0 0 10px rgba(212, 175, 55, 0.8);
+}
+
+.nav-actions {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.theme-toggle {
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  padding: 0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  transition: all 0.3s ease;
+  color: var(--color-gold);
+}
+
+.theme-toggle:hover {
+  background: rgba(212, 175, 55, 0.1);
+  transform: rotate(15deg) scale(1.1);
+}
+
+.login-link {
+  background: transparent;
+  border: none;
+  color: var(--color-text-bright);
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.5);
+  font-size: 0.9rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: color 0.3s;
+  padding: 0.5rem 0;
+}
+
+.navbar.scrolled .login-link {
+  color: var(--color-text);
+  text-shadow: none;
+}
+
+.login-link:hover {
+  color: var(--color-gold);
+}
+
+.cta-button {
+  background: rgba(212, 175, 55, 0.1);
+  padding: 0.8rem 1.5rem;
+  border: 1px solid rgba(212, 175, 55, 0.3);
+  color: var(--color-gold);
+  border-radius: 4px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.2rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.cta-button:hover {
+  background: rgba(212, 175, 55, 0.15);
+  color: var(--color-gold);
+  box-shadow: 0 0 15px rgba(212, 175, 55, 0.4);
+}
+
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Light Mode Fixed Properties */
+[data-theme='light'] .navbar {
+  background: var(--color-bg-dark); /* Solid ivory background immediately */
+  border-bottom: 1px solid var(--glass-border);
+  box-shadow: 0 2px 20px rgba(0, 0, 0, 0.05);
+}
+
+[data-theme='light'] .logo-text,
+[data-theme='light'] .nav-links a,
+[data-theme='light'] .login-link {
+  color: var(--color-text); /* Ensure text is dark and visible against white nav */
+  text-shadow: none;
+}
+

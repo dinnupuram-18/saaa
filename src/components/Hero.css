@@ -1,0 +1,167 @@
+.hero {
+  position: relative;
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start; /* Groups everything at the top then we use padding */
+  text-align: center;
+  overflow: hidden;
+  background: var(--hero-overlay), url('/temple_entrance_hero_1775920198122.png') center/cover no-repeat;
+  transition: var(--transition-theme);
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: var(--hero-overlay);
+  z-index: 1;
+  pointer-events: none;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 10;
+  max-width: 1200px;
+  width: 90%;
+  margin: 0 auto;
+  padding-top: 60vh; /* Pushed further down to clear the Om area */
+}
+
+.hero-academy-tag {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 2.5rem;
+  opacity: 0;
+  animation: fadeInDown 1.5s 0.2s forwards ease-out;
+}
+
+.welcome-text {
+  font-family: var(--font-body);
+  font-size: 0.8rem;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--color-saffron);
+  margin-bottom: 0.5rem;
+  opacity: 0.8;
+}
+
+.academy-text {
+  font-family: var(--font-heading);
+  font-size: 1.4rem;
+  letter-spacing: 0.1em;
+  color: var(--color-gold);
+  text-shadow: 0 2px 10px rgba(212, 175, 55, 0.3);
+}
+
+.hero-subtitle {
+  font-family: var(--font-body);
+  font-size: 1.2rem;
+  letter-spacing: 0.2rem;
+  text-transform: uppercase;
+  color: var(--color-saffron);
+  margin-top: 1rem; /* New gap below the main heading */
+  opacity: 0.8;
+}
+
+.hero-title {
+  font-size: 5rem;
+  line-height: 1.1;
+  margin-bottom: 0; /* Let the subtitle handle the top gap */
+  text-shadow: 0 4px 30px rgba(0, 0, 0, 0.5);
+}
+
+@media (max-width: 768px) {
+  .hero-title {
+    font-size: 3.5rem;
+  }
+}
+
+.hero-actions {
+  margin-top: 2rem;
+}
+
+.btn-explore {
+  padding: 1rem 2.5rem;
+  color: var(--color-gold);
+  font-family: var(--font-body);
+  font-size: 1rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-explore:hover {
+  background: rgba(212, 175, 55, 0.1);
+  transform: translateY(-3px);
+  box-shadow: 0 0 15px rgba(212, 175, 55, 0.4);
+}
+
+.hero-cta {
+  font-size: 0.9rem;
+  letter-spacing: 0.1em;
+  color: var(--color-text);
+  margin-top: 4rem;
+  position: absolute;
+  bottom: 10vh;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.hero-cta p {
+  margin-bottom: 2rem;
+}
+
+/* Particles Effects */
+.particles-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.particle {
+  position: absolute;
+  left: var(--left);
+  top: var(--top);
+  width: 4px;
+  height: 4px;
+  background: var(--color-gold);
+  border-radius: 50%;
+  opacity: var(--opacity);
+  box-shadow: 0 0 10px var(--color-gold);
+  animation: floatParticle var(--duration) var(--delay) infinite linear;
+}
+
+@keyframes floatParticle {
+  0% {
+    transform: translateY(0) scale(1);
+    opacity: 0;
+  }
+
+  20% {
+    opacity: var(--opacity);
+  }
+
+  80% {
+    opacity: var(--opacity);
+  }
+
+  100% {
+    transform: translateY(-100px) scale(0);
+    opacity: 0;
+  }
+}

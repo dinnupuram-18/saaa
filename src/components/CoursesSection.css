@@ -1,0 +1,335 @@
+.courses-section {
+  padding: 10rem 2rem;
+  background: linear-gradient(180deg, var(--color-bg-darker) 0%, var(--color-bg-dark) 50%, var(--color-bg-darker) 100%);
+  position: relative;
+  overflow: hidden;
+}
+
+.courses-inner {
+  max-width: 1300px;
+  margin: 0 auto;
+}
+
+.courses-header {
+  text-align: center;
+  margin-bottom: 5rem;
+}
+
+.section-label {
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.3em;
+  color: var(--color-saffron);
+  margin-bottom: 1rem;
+}
+
+.courses-heading {
+  font-size: 3.5rem;
+  color: var(--color-gold);
+  margin-bottom: 1rem;
+}
+
+.section-subtitle {
+  font-size: 1.1rem;
+  color: var(--color-text);
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.courses-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 2rem;
+}
+
+/* Course Card */
+.course-card {
+  padding: 2.5rem 2rem;
+  border-radius: 12px;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  will-change: transform, opacity;
+}
+
+.course-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.6), 0 0 20px rgba(212, 175, 55, 0.05);
+}
+
+.course-icon-wrap {
+  position: relative;
+  width: 60px;
+  height: 60px;
+  margin-bottom: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.course-emoji {
+  font-size: 2.5rem;
+  position: relative;
+  z-index: 2;
+  filter: drop-shadow(0 0 10px var(--course-color));
+}
+
+.course-glow {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  opacity: 0.15;
+  filter: blur(15px);
+  z-index: 1;
+}
+
+.course-category {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  font-weight: 600;
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+.course-content {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.course-title {
+  font-size: 1.6rem;
+  color: var(--color-text-bright);
+  margin-bottom: 1rem;
+}
+
+.course-desc {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: var(--color-text);
+  margin-bottom: 2rem;
+  max-height: 180px;
+  overflow-y: auto;
+  padding-right: 8px;
+  mask-image: linear-gradient(to bottom, black 85%, transparent 100%);
+  -webkit-mask-image: linear-gradient(to bottom, black 85%, transparent 100%);
+}
+
+.course-desc::-webkit-scrollbar {
+  width: 4px;
+}
+
+.course-desc::-webkit-scrollbar-thumb {
+  background: rgba(212, 175, 55, 0.2);
+  border-radius: 10px;
+}
+
+.course-desc::-webkit-scrollbar-thumb:hover {
+  background: var(--color-gold);
+}
+
+.course-meta-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.course-price-tag {
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--color-gold);
+  background: rgba(212, 175, 55, 0.1);
+  padding: 0.2rem 0.6rem;
+  border-radius: 4px;
+  letter-spacing: 0.05em;
+}
+
+.btn-learn-more {
+  margin-top: auto;
+  align-self: flex-start;
+  color: var(--color-text);
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  transition: color 0.3s ease;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.btn-learn-more .arrow {
+  transition: transform 0.3s ease;
+}
+
+.course-card:hover .btn-learn-more {
+  color: var(--hover-color);
+}
+
+.course-card:hover .btn-learn-more .arrow {
+  transform: translateX(5px);
+}
+
+.card-border-bottom {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  opacity: 0.3;
+  transition: opacity 0.3s ease;
+}
+
+.course-card:hover .card-border-bottom {
+  opacity: 1;
+}
+
+/* Modal Styles */
+.course-modal-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background: var(--glass-bg);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: fadeIn 0.3s ease-out forwards;
+}
+
+.course-modal {
+  width: 90%;
+  max-width: 600px;
+  border-radius: 12px;
+  padding: 3rem;
+  position: relative;
+  box-shadow: 0 25px 80px rgba(0,0,0,0.8);
+  animation: modalSlideUp 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.modal-close {
+  position: absolute;
+  top: 1.5rem;
+  right: 1.5rem;
+  font-size: 1.5rem;
+  color: var(--color-text);
+  transition: color 0.3s;
+}
+
+.modal-close:hover {
+  color: var(--color-gold);
+}
+
+.modal-header {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+  border-top: 1px solid var(--glass-border);
+  padding-bottom: 1.5rem;
+}
+
+.modal-icon {
+  font-size: 3.5rem;
+}
+
+.modal-category {
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  font-weight: 600;
+}
+
+.modal-title {
+  font-size: 2.2rem;
+  color: var(--color-text-bright);
+}
+
+.modal-desc {
+  font-size: 1.1rem;
+  line-height: 1.7;
+  color: var(--color-text);
+  margin-bottom: 2.5rem;
+}
+
+.modal-features {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  margin-bottom: 3rem;
+}
+
+.feature h4 {
+  font-family: var(--font-body);
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--color-text);
+  margin-bottom: 0.3rem;
+}
+
+.feature p {
+  font-size: 0.95rem;
+  color: var(--color-gold);
+  font-weight: 500;
+}
+
+.modal-actions {
+  text-align: center;
+}
+
+.modal-feature-list {
+  list-style: none;
+  margin-bottom: 3rem;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1.2rem;
+}
+
+.modal-feature-list li {
+  color: var(--color-text-bright);
+  font-size: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+}
+
+.modal-feature-list li::before {
+  content: '✓';
+  color: var(--color-gold);
+  font-weight: bold;
+  background: rgba(212, 175, 55, 0.1);
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  font-size: 0.8rem;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes modalSlideUp {
+  from { opacity: 0; transform: translateY(40px) scale(0.95); }
+  to { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+@media (max-width: 768px) {
+  .modal-header { flex-direction: column; text-align: center; }
+  .modal-features { grid-template-columns: 1fr; text-align: center; gap: 1.5rem; }
+}
