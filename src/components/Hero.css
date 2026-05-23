@@ -77,9 +77,63 @@
   text-shadow: 0 4px 30px rgba(0, 0, 0, 0.5);
 }
 
-@media (max-width: 768px) {
+@media (max-width: 992px) {
+  .hero-content {
+    padding-top: 55vh;
+  }
+  .academy-text {
+    font-size: 1.2rem;
+  }
+  .hero-subtitle {
+    font-size: 1rem;
+  }
   .hero-title {
-    font-size: 3.5rem;
+    font-size: 4.2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero {
+    min-height: auto;
+    background-position: top center;
+  }
+  .hero-content {
+    padding-top: 45vh;
+    width: 95%;
+  }
+  .hero-title {
+    font-size: 3rem;
+  }
+  .hero-subtitle {
+    font-size: 1rem;
+  }
+  .hero-actions {
+    display: grid;
+    gap: 1rem;
+    justify-content: center;
+  }
+  .hero-cta {
+    bottom: 5vh;
+    left: 50%;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-content {
+    padding-top: 40vh;
+  }
+  .hero-title {
+    font-size: 2.2rem;
+  }
+  .academy-text {
+    font-size: 1rem;
+  }
+  .welcome-text {
+    font-size: 0.75rem;
+  }
+  .btn-explore {
+    width: 100%;
+    padding: 0.9rem 1.5rem;
   }
 }
 

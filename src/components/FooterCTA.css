@@ -170,11 +170,41 @@
   pointer-events: none;
 }
 
+@media (max-width: 992px) {
+  .footer-cta-section {
+    padding: 8rem 1.5rem;
+  }
+  .footer-heading {
+    font-size: 3rem;
+  }
+}
+
 @media (max-width: 768px) {
+  .footer-cta-section {
+    padding: 6rem 1rem;
+  }
   .footer-heading { font-size: 2.5rem; }
+  .footer-contact-info {
+    gap: 1rem;
+  }
+  .contact-item {
+    padding: 2rem;
+  }
   .footer-bottom {
     flex-direction: column;
     gap: 1.5rem;
     text-align: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .footer-heading {
+    font-size: 2rem;
+  }
+  .footer-contact-info {
+    grid-template-columns: 1fr;
+  }
+  .footer-curriculum-tags {
+    gap: 0.75rem;
   }
 }

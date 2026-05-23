@@ -241,3 +241,45 @@ button {
   100% { opacity: 0; transform: rotate(45deg) translate(5px, 5px); }
 }
 
+/* Responsive breakpoints */
+@media (max-width: 1200px) {
+  body {
+    font-size: 0.95rem;
+  }
+}
+
+@media (max-width: 992px) {
+  body {
+    font-size: 0.92rem;
+  }
+  .app-container {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+}
+
+@media (max-width: 768px) {
+  html {
+    font-size: 0.88rem;
+  }
+  body {
+    background-position: top center;
+  }
+  .btn-primary {
+    width: 100%;
+    padding: 12px 20px;
+  }
+}
+
+@media (max-width: 600px) {
+  html {
+    font-size: 0.85rem;
+  }
+  body {
+    overflow-x: hidden;
+  }
+  .glass-panel {
+    padding: 1.2rem;
+  }
+}
+

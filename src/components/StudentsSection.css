@@ -128,7 +128,42 @@
   letter-spacing: 0.05em;
 }
 
+@media (max-width: 992px) {
+  .students-section {
+    padding: 8rem 1.5rem;
+  }
+  .students-cta p {
+    font-size: 1.2rem;
+  }
+}
+
 @media (max-width: 768px) {
-  .students-grid { gap: 2rem; }
-  .student-card:hover { transform: translateY(-5px); }
+  .students-section {
+    padding: 7rem 1rem;
+  }
+  .students-grid {
+    gap: 2rem;
+  }
+  .student-image-wrap {
+    height: 220px;
+  }
+  .quote-icon {
+    font-size: 3rem;
+  }
+  .student-card:hover {
+    transform: translateY(-5px);
+  }
+}
+
+@media (max-width: 480px) {
+  .students-grid {
+    gap: 1.5rem;
+  }
+  .student-info {
+    padding: 1.8rem;
+  }
+  .student-quote {
+    font-size: 1rem;
+    max-height: none;
+  }
 }
