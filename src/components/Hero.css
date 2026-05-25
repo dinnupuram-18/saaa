@@ -26,12 +26,15 @@
 }
 
 .hero-content {
-  position: relative;
+  position: absolute;
+  top: 62%;
+  left: 50%;
+  transform: translate(-50%, -18%);
   z-index: 10;
   max-width: 1200px;
   width: 90%;
   margin: 0 auto;
-  padding-top: 8rem;
+  padding-top: 0;
   padding-bottom: 4rem;
 }
 
@@ -81,7 +84,7 @@
 
 @media (max-width: 992px) {
   .hero-content {
-    padding-top: 6rem;
+    padding-top: 1.5rem;
     padding-bottom: 3rem;
   }
   .academy-text {
@@ -102,7 +105,7 @@
     padding: 1.5rem 0;
   }
   .hero-content {
-    padding-top: 3rem;
+    padding-top: 1rem;
     padding-bottom: 2rem;
     width: 95%;
   }
