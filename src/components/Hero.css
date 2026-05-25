@@ -5,11 +5,12 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: flex-start; /* Groups everything at the top then we use padding */
+  justify-content: center;
   text-align: center;
-  overflow: hidden;
+  overflow: visible;
   background: var(--hero-overlay), url('/temple_entrance_hero_1775920198122.png') center/cover no-repeat;
   transition: var(--transition-theme);
+  padding: 2rem 0;
 }
 
 .hero::before {
@@ -30,7 +31,8 @@
   max-width: 1200px;
   width: 90%;
   margin: 0 auto;
-  padding-top: 60vh; /* Pushed further down to clear the Om area */
+  padding-top: 8rem;
+  padding-bottom: 4rem;
 }
 
 .hero-academy-tag {
@@ -79,7 +81,8 @@
 
 @media (max-width: 992px) {
   .hero-content {
-    padding-top: 55vh;
+    padding-top: 6rem;
+    padding-bottom: 3rem;
   }
   .academy-text {
     font-size: 1.2rem;
@@ -96,34 +99,42 @@
   .hero {
     min-height: auto;
     background-position: top center;
+    padding: 1.5rem 0;
   }
   .hero-content {
-    padding-top: 45vh;
+    padding-top: 3rem;
+    padding-bottom: 2rem;
     width: 95%;
   }
   .hero-title {
-    font-size: 3rem;
+    font-size: 2.5rem;
   }
   .hero-subtitle {
-    font-size: 1rem;
+    font-size: 0.95rem;
+    margin-top: 0.8rem;
   }
   .hero-actions {
     display: grid;
     gap: 1rem;
     justify-content: center;
+    margin-top: 1.5rem;
   }
   .hero-cta {
-    bottom: 5vh;
-    left: 50%;
+    position: static;
+    bottom: auto;
+    left: auto;
+    transform: none;
+    margin-top: 2rem;
   }
 }
 
 @media (max-width: 480px) {
   .hero-content {
-    padding-top: 40vh;
+    padding-top: 2rem;
+    padding-bottom: 1.5rem;
   }
   .hero-title {
-    font-size: 2.2rem;
+    font-size: 2rem;
   }
   .academy-text {
     font-size: 1rem;
@@ -133,7 +144,8 @@
   }
   .btn-explore {
     width: 100%;
-    padding: 0.9rem 1.5rem;
+    padding: 0.85rem 1.5rem;
+    font-size: 0.9rem;
   }
 }
 
@@ -165,11 +177,21 @@
   font-size: 0.9rem;
   letter-spacing: 0.1em;
   color: var(--color-text);
-  margin-top: 4rem;
-  position: absolute;
-  bottom: 10vh;
-  left: 50%;
-  transform: translateX(-50%);
+  margin-top: 3rem;
+  position: relative;
+  bottom: auto;
+  left: auto;
+  transform: none;
+}
+
+@media (min-width: 769px) {
+  .hero-cta {
+    position: absolute;
+    bottom: 10vh;
+    left: 50%;
+    transform: translateX(-50%);
+    margin-top: 0;
+  }
 }
 
 .hero-cta p {

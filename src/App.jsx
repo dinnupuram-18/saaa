@@ -11,7 +11,6 @@ import PerformanceGallery from './components/PerformanceGallery'
 import FooterCTA from './components/FooterCTA'
 import EnrollmentModal from './components/EnrollmentModal'
 import LoginModal from './components/LoginModal'
-import BackgroundMusic from './components/BackgroundMusic'
 
 function App() {
   const [isEnrollModalOpen, setIsEnrollModalOpen] = useState(false);
@@ -32,7 +31,6 @@ function App() {
 
   return (
     <div className="app-container" data-theme={theme}>
-      <BackgroundMusic />
       <Navbar onEnrollClick={openEnrollModal} onLoginClick={openLoginModal} theme={theme} toggleTheme={toggleTheme} />
       <Hero onEnrollClick={openEnrollModal} toggleTheme={toggleTheme} />
       <CanvasScrollSequence onEnrollClick={openEnrollModal} />
